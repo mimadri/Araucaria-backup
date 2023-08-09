@@ -1,5 +1,3 @@
-import { ref } from 'vue';
-
 const mailGallery = ref([]);
 const backendIP = import.meta.env.VITE_WS_DIR;
 const backendURL = `http://${backendIP}:8000/send_email/`;

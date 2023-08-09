@@ -1,7 +1,4 @@
 <script setup>
-import { ref } from "vue";
-import { useGallery } from "@/composables/gallery";
-import { useCanvas } from "@/composables/canvas";
 
 const { gallery, deleteImageFromGallery, sendMailContent } = useGallery();
 const { setCanvasImage } = useCanvas();

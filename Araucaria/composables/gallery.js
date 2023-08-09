@@ -1,6 +1,3 @@
-import { ref } from 'vue';
-import { base64ToBlob } from '@/utils/imageManipulation';
-
 const gallery = ref([]);
 const backendIP = import.meta.env.VITE_WS_DIR;
 const backendURL = `http://${backendIP}:8000/send_email/`;

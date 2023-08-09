@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import { useMailGallery } from '@/composables/mail';
 
 const { mailGallery, deleteImageFromMailGallery, sendMailContent } = useMailGallery();
 const mailGalleryMenu = ref(false);

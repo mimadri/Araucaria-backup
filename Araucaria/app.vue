@@ -8,14 +8,11 @@
 </style> -->
 
 <script setup>
-import Canvas from "components/Canvas.vue";
-import CanvasTools from "components/CanvasTools.vue";
-import Gallery from "components/Gallery.vue";
-import GenerateButton from "components/GenerateButton.vue";
-import Loader from "components/Loader.vue";
-import { usePrompt } from "composables/prompt";
-
 const { prompt } = usePrompt();
+
+if (typeof window !== 'undefined'){
+  console.log("si existe")
+}
 </script>
 
 <template>

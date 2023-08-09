@@ -1,10 +1,4 @@
 <script setup>
-import { watch } from 'vue';
-import { useDiffusionSocket } from '@/composables/websocket';
-import { useCanvas } from '@/composables/canvas';
-import { usePrompt } from '@/composables/prompt';
-import { useGallery } from '@/composables/gallery';
-import { useLoading } from '@/composables/loading';
 
 const { toggleLoading } = useLoading();
 const { getCanvasImageBase64, canvas } = useCanvas();
