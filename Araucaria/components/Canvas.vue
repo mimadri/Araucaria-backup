@@ -1,10 +1,5 @@
 <script setup>
-import { watch } from 'vue';
 import VueDrawingCanvas from 'vue-drawing-canvas';
-import { useCanvas } from '@/composables/canvas';
-import { useDiffusionSocket } from '@/composables/websocket';
-import { base64ToBlob } from '@/utils/imageManipulation';
-import { useGallery } from '@/composables/gallery';
 
 const { addBlobToGallery } = useGallery();
 

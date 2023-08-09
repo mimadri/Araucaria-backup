@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from "vue";
-import { useCanvas } from "@/composables/canvas";
 
 const { canvas, strokeColor, backgroundColor, lineWidth, undo, redo, reset } =
   useCanvas();

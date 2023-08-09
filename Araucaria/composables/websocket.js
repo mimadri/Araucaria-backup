@@ -1,5 +1,3 @@
-import { useWebSocket } from "@vueuse/core";
-
 const socketIP = import.meta.env.VITE_WS_DIR;
 const socketID = Math.random().toString().substring(10, 15);
 const socketURL = `ws://${socketIP}:8000/diffuse/${socketID}`;

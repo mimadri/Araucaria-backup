@@ -1,5 +1,3 @@
-import { ref } from 'vue';
-
 const strokeColor = ref('#000000');
 const backgroundColor = ref('#FFFFFF');
 const lineWidth = ref(15);
