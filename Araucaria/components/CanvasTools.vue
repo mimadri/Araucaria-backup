@@ -1,6 +1,6 @@
 <script setup>
 
-const { canvas, strokeColor, backgroundColor, lineWidth, undo, redo, reset } =
+const { canvas, strokeColor, backgroundColor, lineWidth, undo, redo, reset, example } =
   useCanvas();
 
 const lineWidthMenu = ref(false);
@@ -12,6 +12,7 @@ const backgroundColorUpdate = () => canvas.value.redraw();
 
 <template>
   <v-navigation-drawer location="left" rail>
+    <!-- Brush color button -->
     <v-list-item>
       <v-menu
         v-model="strokeColorMenu"
@@ -20,12 +21,17 @@ const backgroundColorUpdate = () => canvas.value.redraw();
       >
         <template #activator="{ props }">
           <v-btn icon v-bind="props" :rounded="0" size="small">
+            <v-tooltip
+              activator="parent"
+              location="start"
+            >Color pincel</v-tooltip>
             <v-icon icon="mdi:mdi-circle" :color="strokeColor" size="small"/>
           </v-btn>
         </template>
         <v-color-picker v-model="strokeColor" hide-inputs />
       </v-menu>
     </v-list-item>
+    <!-- Background color button -->
     <v-list-item>
       <v-menu
         v-model="backgroundColorMenu"
@@ -58,28 +64,26 @@ const backgroundColorUpdate = () => canvas.value.redraw();
         </v-card>
       </v-menu>
     </v-list-item>
-    <v-list density="comfortable" nav>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-undo-variant" :rounded="0" @click="undo" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-redo-variant" :rounded="0" @click="redo" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-cursor-move" :rounded="0" @click="reset" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-palette-outline" :rounded="0" @click="reset" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-select-drag" :rounded="0" @click="reset" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-pencil-box-multiple-outline" :rounded="0" @click="reset" size="small" />
-      </v-list-item>
-      <v-list-item>
-        <v-btn icon="mdi:mdi-delete-outline" :rounded="0" @click="reset" size="small" />
-      </v-list-item>
-    </v-list>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-undo-variant" :rounded="0" @click="undo" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-redo-variant" :rounded="0" @click="redo" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-cursor-move" :rounded="0" @click="reset" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-palette-outline" :rounded="0" @click="example" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-select-drag" :rounded="0" @click="reset" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-pencil-box-multiple-outline" :rounded="0" @click="reset" size="small" />
+    </v-list-item>
+    <v-list-item>
+      <v-btn icon="mdi:mdi-delete-outline" :rounded="0" @click="reset" size="small" />
+    </v-list-item>
   </v-navigation-drawer>
 </template>

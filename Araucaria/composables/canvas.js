@@ -11,6 +11,7 @@ export const useCanvas = () => {
   const setBackgroundImage = (val) => (backgroundImage.value = val);
   const undo = () => canvas.value.undo();
   const redo = () => canvas.value.redo();
+  const example = () => console.log("hola michelle");
   const reset = () => {
     setBackgroundImage(null);
     canvas.value.redraw();
@@ -38,5 +39,6 @@ export const useCanvas = () => {
     undo,
     redo,
     reset,
+    example,
   };
 };
