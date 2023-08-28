@@ -1,12 +1,3 @@
-<!-- // app.vue
-<template>
-  <v-btn>Hello Sass Changes</v-btn>
-</template>
-
-<style lang="scss">
-@use './settings';
-</style> -->
-
 <script setup>
 const { prompt } = usePrompt();
 
@@ -16,16 +7,23 @@ if (typeof window !== 'undefined'){
 </script>
 
 <template>
-  <v-app ref="el" class="d-flex justify-center mx-8" max-height="95vh">
+  <v-app
+    ref="el"
+    class="d-flex justify-center mx-8"
+    max-height="95vh"
+  >
     <v-container class="mt-10">
       <v-responsive height="95vh">
         <v-row no-gutters>
           <v-col class="d-flex flex-column justify-space-around h-100 mx-1">
             <v-layout>
-              <CanvasTools />
-              <Canvas />
+              <AraucariaCanvasTools />
+              <AraucariaCanvas />
             </v-layout>
-            <v-container fluid class="d-flex h-100 justify-space-around">
+            <v-container
+              fluid
+              class="d-flex h-100 justify-space-around"
+            >
               <v-textarea
                 v-model="prompt"
                 clearable
@@ -33,15 +31,18 @@ if (typeof window !== 'undefined'){
                 label="¿Qué quieres generar?"
                 :value="prompt"
               />
-              <GenerateButton />
+              <AraucariaGenerateButton />
             </v-container>
           </v-col>
-          <v-col class="h-100" cols="3">
-            <Gallery />
+          <v-col
+            class="h-100"
+            cols="3"
+          >
+            <AraucariaGallery />
           </v-col>
         </v-row>
       </v-responsive>
-      <Loader />
+      <AraucariaLoader />
     </v-container>
   </v-app>
 </template>
