@@ -17,12 +17,12 @@ export const useMailGallery = () => {
     };
 
     await fetch(backendURL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
-      mode: 'cors',
+      mode: "cors",
       body: JSON.stringify(body),
     });
   };

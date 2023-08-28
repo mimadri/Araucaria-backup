@@ -1,5 +1,4 @@
 <script setup>
-
 const { canvas, strokeColor, backgroundColor, lineWidth, undo, redo, reset } =
   useCanvas();
 
@@ -11,10 +10,7 @@ const backgroundColorUpdate = () => canvas.value.redraw();
 </script>
 
 <template>
-  <v-navigation-drawer
-    location="left"
-    rail
-  >
+  <v-navigation-drawer location="left" rail>
     <v-list-item>
       <v-menu
         v-model="strokeColorMenu"
@@ -22,23 +18,11 @@ const backgroundColorUpdate = () => canvas.value.redraw();
         :close-on-content-click="false"
       >
         <template #activator="{ props }">
-          <v-btn
-            icon
-            v-bind="props"
-            :rounded="0"
-            size="small"
-          >
-            <v-icon
-              icon="mdi:mdi-circle"
-              :color="strokeColor"
-              size="small"
-            />
+          <v-btn icon v-bind="props" :rounded="0" size="small">
+            <v-icon icon="mdi:mdi-circle" :color="strokeColor" size="small" />
           </v-btn>
         </template>
-        <v-color-picker
-          v-model="strokeColor"
-          hide-inputs
-        />
+        <v-color-picker v-model="strokeColor" hide-inputs />
       </v-menu>
     </v-list-item>
     <v-list-item>
@@ -48,12 +32,7 @@ const backgroundColorUpdate = () => canvas.value.redraw();
         :close-on-content-click="false"
       >
         <template #activator="{ props }">
-          <v-btn
-            icon
-            v-bind="props"
-            :rounded="0"
-            size="small"
-          >
+          <v-btn icon v-bind="props" :rounded="0" size="small">
             <v-icon
               icon="mdi:mdi-circle"
               :color="backgroundColor"
@@ -82,19 +61,12 @@ const backgroundColorUpdate = () => canvas.value.redraw();
             size="small"
           />
         </template>
-        <v-card
-          min-width="300"
-          min="5"
-          max="100"
-        >
+        <v-card min-width="300" min="5" max="100">
           <v-slider v-model="lineWidth" />
         </v-card>
       </v-menu>
     </v-list-item>
-    <v-list
-      density="comfortable"
-      nav
-    >
+    <v-list density="comfortable" nav>
       <v-list-item>
         <v-btn
           icon="mdi:mdi-undo-variant"

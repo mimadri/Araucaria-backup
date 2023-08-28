@@ -1,5 +1,4 @@
 <script setup>
-
 const { toggleLoading } = useLoading();
 const { getCanvasImageBase64, canvas } = useCanvas();
 const { data, sendImagePrompt } = useDiffusionSocket();
@@ -18,7 +17,7 @@ const toggleButton = () => {
 watch(data, (msg) => {
   const { msgType } = JSON.parse(msg);
   switch (msgType) {
-    case 'result': {
+    case "result": {
       toggleLoading();
       break;
     }
@@ -29,20 +28,14 @@ watch(data, (msg) => {
 });
 
 function enter(event) {
-  if (event.code === 'Enter') toggleButton();
+  if (event.code === "Enter") toggleButton();
 }
 
 window.onkeydown = enter;
 </script>
 
 <template>
-  <v-btn
-    flat
-    color="success"
-    size="x-large"
-    class="mx-2"
-    @click="toggleButton"
-  >
+  <v-btn flat color="success" size="x-large" class="mx-2" @click="toggleButton">
     Generar
   </v-btn>
 </template>

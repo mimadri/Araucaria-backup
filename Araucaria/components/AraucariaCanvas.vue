@@ -1,5 +1,5 @@
 <script setup>
-import VueDrawingCanvas from 'vue-drawing-canvas';
+import VueDrawingCanvas from "vue-drawing-canvas";
 
 const { addBlobToGallery } = useGallery();
 
@@ -22,7 +22,7 @@ const { data } = useDiffusionSocket();
 watch(data, async (msg) => {
   const { msgType, content } = JSON.parse(msg);
   switch (msgType) {
-    case 'result': {
+    case "result": {
       const blob = base64ToBlob(`data:image/png;base64,${content.result}`);
       const url = URL.createObjectURL(blob);
       addBlobToGallery(url, content.result);
@@ -57,10 +57,7 @@ document.onkeydown = goFullScreen;
 
 <template>
   <v-main class="pr-0">
-    <v-card
-      :width="canvasWidth"
-      :height="canvasHeight"
-    >
+    <v-card :width="canvasWidth" :height="canvasHeight">
       <vue-drawing-canvas
         ref="canvas"
         v-model:image="image"
