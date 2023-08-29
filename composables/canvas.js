@@ -1,10 +1,10 @@
-const strokeColor = ref('#000000');
-const backgroundColor = ref('#FFFFFF');
+const strokeColor = ref("#000000");
+const backgroundColor = ref("#FFFFFF");
 const lineWidth = ref(15);
 const canvasWidth = ref(768);
 const canvasHeight = ref(512);
 const backgroundImage = ref(null);
-const image = ref(''); // base64 canvas state
+const image = ref(""); // base64 canvas state
 const canvas = ref(null);
 
 export const useCanvas = () => {
@@ -21,7 +21,7 @@ export const useCanvas = () => {
     setBackgroundImage(obj);
     await canvas.value.redraw();
   };
-  const getCanvasImageBase64 = () => image.value.split(',')[1];
+  const getCanvasImageBase64 = () => image.value.split(",")[1];
 
   return {
     strokeColor,

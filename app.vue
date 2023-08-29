@@ -1,17 +1,8 @@
-<!-- // app.vue
-<template>
-  <v-btn>Hello Sass Changes</v-btn>
-</template>
-
-<style lang="scss">
-@use './settings';
-</style> -->
-
 <script setup>
 const { prompt } = usePrompt();
 
-if (typeof window !== 'undefined'){
-  console.log("si existe")
+if (typeof window !== "undefined") {
+  console.log("si existe");
 }
 </script>
 
@@ -22,8 +13,8 @@ if (typeof window !== 'undefined'){
         <v-row no-gutters>
           <v-col class="d-flex flex-column justify-space-around h-100 mx-1">
             <v-layout>
-              <CanvasTools />
-              <Canvas />
+              <AraucariaCanvasTools />
+              <AraucariaCanvas />
             </v-layout>
             <v-container fluid class="d-flex h-100 justify-space-around">
               <v-textarea
@@ -33,15 +24,15 @@ if (typeof window !== 'undefined'){
                 label="¿Qué quieres generar?"
                 :value="prompt"
               />
-              <GenerateButton />
+              <AraucariaGenerateButton />
             </v-container>
           </v-col>
           <v-col class="h-100" cols="3">
-            <Gallery />
+            <AraucariaGallery />
           </v-col>
         </v-row>
       </v-responsive>
-      <Loader />
+      <AraucariaLoader />
     </v-container>
   </v-app>
 </template>

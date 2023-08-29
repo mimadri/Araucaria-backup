@@ -1,5 +1,4 @@
 <script setup>
-
 const { canvas, strokeColor, backgroundColor, lineWidth, undo, redo, reset } =
   useCanvas();
 
@@ -20,7 +19,7 @@ const backgroundColorUpdate = () => canvas.value.redraw();
       >
         <template #activator="{ props }">
           <v-btn icon v-bind="props" :rounded="0" size="small">
-            <v-icon icon="mdi:mdi-circle" :color="strokeColor" size="small"/>
+            <v-icon icon="mdi:mdi-circle" :color="strokeColor" size="small" />
           </v-btn>
         </template>
         <v-color-picker v-model="strokeColor" hide-inputs />
@@ -34,7 +33,11 @@ const backgroundColorUpdate = () => canvas.value.redraw();
       >
         <template #activator="{ props }">
           <v-btn icon v-bind="props" :rounded="0" size="small">
-            <v-icon icon="mdi:mdi-circle" :color="backgroundColor" size="small"/>
+            <v-icon
+              icon="mdi:mdi-circle"
+              :color="backgroundColor"
+              size="small"
+            />
           </v-btn>
         </template>
         <v-color-picker
@@ -51,7 +54,12 @@ const backgroundColorUpdate = () => canvas.value.redraw();
         location="start"
       >
         <template #activator="{ props }">
-          <v-btn icon="mdi:mdi-draw-pen" v-bind="props" :rounded="0" size="small" />
+          <v-btn
+            icon="mdi:mdi-draw-pen"
+            v-bind="props"
+            :rounded="0"
+            size="small"
+          />
         </template>
         <v-card min-width="300" min="5" max="100">
           <v-slider v-model="lineWidth" />
@@ -60,25 +68,60 @@ const backgroundColorUpdate = () => canvas.value.redraw();
     </v-list-item>
     <v-list density="comfortable" nav>
       <v-list-item>
-        <v-btn icon="mdi:mdi-undo-variant" :rounded="0" @click="undo" size="small" />
+        <v-btn
+          icon="mdi:mdi-undo-variant"
+          :rounded="0"
+          size="small"
+          @click="undo"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-redo-variant" :rounded="0" @click="redo" size="small" />
+        <v-btn
+          icon="mdi:mdi-redo-variant"
+          :rounded="0"
+          size="small"
+          @click="redo"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-cursor-move" :rounded="0" @click="reset" size="small" />
+        <v-btn
+          icon="mdi:mdi-cursor-move"
+          :rounded="0"
+          size="small"
+          @click="reset"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-palette-outline" :rounded="0" @click="reset" size="small" />
+        <v-btn
+          icon="mdi:mdi-palette-outline"
+          :rounded="0"
+          size="small"
+          @click="reset"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-select-drag" :rounded="0" @click="reset" size="small" />
+        <v-btn
+          icon="mdi:mdi-select-drag"
+          :rounded="0"
+          size="small"
+          @click="reset"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-pencil-box-multiple-outline" :rounded="0" @click="reset" size="small" />
+        <v-btn
+          icon="mdi:mdi-pencil-box-multiple-outline"
+          :rounded="0"
+          size="small"
+          @click="reset"
+        />
       </v-list-item>
       <v-list-item>
-        <v-btn icon="mdi:mdi-delete-outline" :rounded="0" @click="reset" size="small" />
+        <v-btn
+          icon="mdi:mdi-delete-outline"
+          :rounded="0"
+          size="small"
+          @click="reset"
+        />
       </v-list-item>
     </v-list>
   </v-navigation-drawer>

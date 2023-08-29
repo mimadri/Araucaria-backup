@@ -1,5 +1,4 @@
 <script setup>
-
 const { gallery, deleteImageFromGallery, sendMailContent } = useGallery();
 const { setCanvasImage } = useCanvas();
 const mailMenu = ref(false);
